@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gengyuanmax</title>
+    <description>Still a learner | 关于学习 | 关于生活</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 15 Apr 2019 19:51:27 +0200</pubDate>
+    <lastBuildDate>Mon, 15 Apr 2019 19:51:27 +0200</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 15 Apr 2019 18:40:35 +0200</pubDate>
+        <link>http://localhost:4000/jekyll/update/2019/04/15/welcome-to-jekyll/</link>
+        <guid isPermaLink="true">http://localhost:4000/jekyll/update/2019/04/15/welcome-to-jekyll/</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Vim 与中文输入法</title>
+        <description>&lt;p&gt;Update: 我最后还是放弃在 Vim 模式下输入中文了，mental model 的 cost 太重了（&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;我相信很多中文世界的 Vimer 都遇到过这个烦恼，在 vim 的 insert 模式时可能突然想输个中文，输完之后会本能的直接 &lt;code class=&quot;highlighter-rouge&quot;&gt;esc&lt;/code&gt; 接 normal 模式操作，结果发现跳出来的是中文输入法……对于 vscode，我一般会在几次错误之后被逼到退出 vscode vim 模式，而对于终端中用的 neovim，就只能尽量不输入中文了。&lt;/p&gt;
+
+&lt;p&gt;为了满足我 1% 用 vim 输入中文的场景（比如写博客），我还是想看看有没有什么解决方案，Google 出来的解决方案基本是：&lt;em&gt;在退出 insert 模式时记住当时的输入法，并自动切换到默认输入法（一般是英文）给 normal 模式用，并且在下一次进入 insert 模式时再切换回来。&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;原生 vim 的话，可以使用 &lt;a href=&quot;https://github.com/ybian/smartim&quot;&gt;smartim&lt;/a&gt; 插件，原理是调用 &lt;a href=&quot;https://github.com/daipeihust/im-select&quot;&gt;im-select&lt;/a&gt; 这个 CLI 工具来切换输入法。&lt;/p&gt;
+
+&lt;p&gt;对于 VSCode-vim 的话，smartim 的移植也在近期的 PR 中被 merge 到了插件里，&lt;a href=&quot;https://github.com/VSCodeVim/Vim#use-im-select&quot;&gt;详情见文档的这部分配置&lt;/a&gt;，需要指定一下默认输入法和 im-select 的 binary 路径就好。&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;
+不过实话说，在 vim 中编辑中文的效率和体验和英文比都是大打折扣的。因为中文分词难度太高，不像英文可以简单依靠一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;split &quot; &quot;&lt;/code&gt; 搞定。所以其实无论 vim（&lt;code class=&quot;highlighter-rouge&quot;&gt;w&lt;/code&gt;ord，&lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt;egin，&lt;code class=&quot;highlighter-rouge&quot;&gt;e&lt;/code&gt;nd），emacs 还是操作系统自带的（比如 macOS 中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;alt + 箭头&lt;/code&gt;） 「按词移动」功能对于中文都仅仅是跳转到下一个空格处而已，对于中文来说基本就是下一句了……其他常用操作诸如 &lt;code class=&quot;highlighter-rouge&quot;&gt;f&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;r&lt;/code&gt;eplace, &lt;code class=&quot;highlighter-rouge&quot;&gt;t&lt;/code&gt;ill 也都无法很好的工作。&lt;/p&gt;
+
+&lt;p&gt;不过也算聊胜于无吧，由于我常用 HHKB，能用 vim 操作的一个子集（&lt;code class=&quot;highlighter-rouge&quot;&gt;hjkl&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;o&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;I&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;v&lt;/code&gt; etc.）可能也比按住 &lt;code class=&quot;highlighter-rouge&quot;&gt;Fn&lt;/code&gt; 的方向键好用……&lt;/p&gt;
+</description>
+        <pubDate>Sat, 06 Oct 2018 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/2018/10/06/vim-cn-im/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/10/06/vim-cn-im/</guid>
+        
+        <category>Vim</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Avoiding success at all cost</title>
+        <description>&lt;p&gt;“Avoiding success at all cost” is the informal motto behinds &lt;a href=&quot;https://www.haskell.org/&quot;&gt;Haskell&lt;/a&gt;. It could be parenthesized in two ways, either “Avoiding (success at all cost)” or “(Avoiding sucess) (at all cost)”.&lt;/p&gt;
+
+&lt;p&gt;I’m not going to interpret them directly but rather to share some thoughts on “the success vs. costs” basing on my very own understanding and experience.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-success-vs-cost-of-language-design&quot;&gt;The success vs. cost of language design&lt;/h3&gt;
+
+&lt;p&gt;There’re always trade offs (or compromises) in any software design, and programming language design has no exceptions.&lt;/p&gt;
+
+&lt;p&gt;In other words, all language design decision that made them “successful” i.e. being popular and widely-used in industry or education for some reasons, all comes with their own “costs”: being unsafe, limited expressiveness, or having bad performance, etc.&lt;/p&gt;
+
+&lt;p&gt;Whether or not the “cost” is a problem really depends on scenarios, or their goals. For instances, Python/JavaScript are both very expressive and beginner-friendly by being dynamically-typed, sacrifing the type safety and performance. Java, in constrast, uses a much safer and optimization-friendly type system but being much less expressive. Another typicial comparison would be memory management in programming languages, where languages that are “managed” (by either ARC or Gabage Collector) could be much easier and safer (in terms of memory) for most programmers but also considerred slower than languages that are “closer to the metal”.&lt;/p&gt;
+
+&lt;p&gt;None of these “costs”, or “differences”, really prevent them from being immortally popular.&lt;/p&gt;
+
+&lt;p&gt;For Haskell, the story becomes quite different: being research-oriented means the goal of this language is to pursue some “ultimate” things: the “ultimate” simplicity of intermediate representation, the “ultimate” type system where safety and expressiveness can coexist, the “ultimate” compilation speed and runtime performance, the “ultimate” concise and elegant concrete syntax, the “ultimate”…I don’t know. But it has to be some “ultimate” things that is very difficult, probably endless and impossible, to achieve.&lt;/p&gt;
+
+&lt;p&gt;This, as a result, made all language decisions in Haskell became very hard and slow, because &lt;strong&gt;almost nothing can be scarified&lt;/strong&gt;. That’s why Haskell insisted to be lazy to “guard” the purity regardless of some problems of being “call-by-need”; a decent IO mechanisms is missing in the first 4 yrs after the project’s start until P Walder found &lt;em&gt;Monad&lt;/em&gt;; and the &lt;em&gt;Type Class&lt;/em&gt;, which is first proposed in P Walder’s 1989 paper, spent yrs long to implement and popularize.&lt;/p&gt;
+
+&lt;p&gt;As a side note though, it doesn’t mean there is no compromise in Haskell at all. It’s just as minimized as it could be during its progress. When one audience asking why we have Haskell and OCaml, which’re quite similar in very high level, both survived, SPJ replies:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;There’s just a different set of compromises.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;the-success-vs-cost-of-language-design-process&quot;&gt;The success vs. cost of language design process&lt;/h3&gt;
+
+&lt;p&gt;Another common but extremely controversial (if not the most) topics of programming language design is about its design process: Would you prefer dictatorship or a committee (in other words, a dictatorship of many?)? Would you prefer being proprietary or standardized? In which form would you write the standards, in human nature language, pseudo code, or formal semantics? How many and how frequently breaking changes dare you make? Would you let open source community involve in?&lt;/p&gt;
+
+&lt;p&gt;Again, I think there is no THE answer for all those questions. Majority of popular programming languages came and are still on going with very different paths.&lt;/p&gt;
+
+&lt;p&gt;Python, whose creater, Guido van Rossum, known as the “Benevolent Dictator For Life” (BDFL), i.e. good kind of dictator, still play the central role (until July 2018) of the Python’s development after Python getting popular and adapt a open source and community-based development model. This factor direcly contribute to the fact that Python 3, as a breaking (not completely backward-compatible and not easy to port) but good (in terms of language design and consistency) revision of the language can still be landed, despite of many communities’ pressures. There’re many language (Ruby, Perl, Elm) also choose to follow this route.&lt;/p&gt;
+
+&lt;p&gt;JavaScript, widely known as being created by Brendan Eich in 10 days, in comparision, quickly involved into a committee (TC39) and standardized (ECMAScript) language due to both the open nature of the Web and fast adoption of itself. But Brendan, as the creater, wasn’t even powerful enough to push the committee landing ES4, which is also a breaking but much better revision, but ended up with the ES5 (Harmony), a backward-compatible, yet much less ambitious version due to many political “fights” between different parties (e.g. Mozilla, Microsoft, Yahoo etc.) thus the history wasn’t changed. Even the latest rising and yearly releasing of the “modern” JavaScript (ES6 or ES2015, 2016, 2017…) are mainly driven by the new generation of committee parties (+ Google, Facebook, Airbnb etc.) and still in a very open and standardized way.&lt;/p&gt;
+
+&lt;p&gt;As you can see here, even the history and progress of two rather similar languages can be so different, not to mention more proprietary languages such as Java from Sun/Oracle, C# from Microsoft, OC/Swift from Apple (though the latter was open sourced) or more academia and standardized language like SML and Scheme which both has a standard written in formal semantics.&lt;/p&gt;
+
+&lt;p&gt;So it’s not not obvious that Haskell, also chose its own unique process to suit its unique goal. Although it backs on academia, it chose a rather practical/less-formal approach to define the language, i.e. the compiler implementation over standardization (plus many “formal” fragments among papers though), which is more like C++/OCaml from this point of view. It has a committee, but instead of being very open and conservative, it’s more dictatorial (in terms of average users) and super aggressive in terms of making breaking changes. As a result however, it trained a group of very change-tolerant people in its community…All of these quirks and odds combined works very well and avoid the Haskell “becoming too success too quickly”.&lt;/p&gt;
+
+&lt;h3 id=&quot;end-thoughts&quot;&gt;End thoughts&lt;/h3&gt;
+
+&lt;p&gt;To be fair, Haskell has alreay been very “successful” nowdays, in particular academia (for education, sexy type laboratory etc.) but also industry, either being used in real business or being very reputable among programmers (as being both hard and fun).&lt;/p&gt;
+
+&lt;p&gt;I am not confident and qualified to say Haskell is success in the right degree at the right time. But it’s great to see it, after more than 20 and now almost 30 yrs, slowly figure out its very own way, to “Escape from the Ivory Tower”, and keep going beyond.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 27 Sep 2018 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/2018/09/27/avoiding-success-at-all-cost/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/09/27/avoiding-success-at-all-cost/</guid>
+        
+        <category>Haskell</category>
+        
+        <category>PL</category>
+        
+        <category>笔记</category>
+        
+        <category>🇬🇧</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>程序员中的梦想家</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;本文首发于我的知乎专栏 &lt;a href=&quot;https://zhuanlan.zhihu.com/p/38722466&quot;&gt;The Little Programmer&lt;/a&gt;，转载请保留链接 ;)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;有一类程序员是 visionary 型的，为了实现一些超前的 idea，绕过某些技术的限制，他们写的 code 晦涩高深得只有他们自己能懂，做出来的 tool 看上去很美好结果处处是坑出了 bug 根本没法查，但正是这类人不断创造出新的东西，在洗礼之后成为一个个 big thing。&lt;/p&gt;
+
+&lt;p&gt;我每周都要被 infra 的坑 block 得无法工作几次搞得非常沮丧，后来我发现这个锅除了要扔给 FB 外，还有一大半要扔给我周围这群 visionary 的同事们，我工作直接需要接触到的区区五六个人，发起/创造了 Infer, React, Reason, ReasonReact, BuckleScript…&lt;/p&gt;
+
+&lt;p&gt;所以这大概就是见证/参与这些 idea 成长的代价吧，也意识到这些东西不是在刚开始就像后来大家接受流行时那么美好的。React 发布 5 周年生日时回放 Jordan/Tom 2013 年第一次对外发布 React/JSX 的视频。我问 Jordan 说你后来怎么没再去分享了。他说你不知道我那天讲完下来被所有听众指着批评。React 第一次在内部使用是 2011 年在 news feed，然后是 2012 年 instagram (pete hunt)，所以这个时间其实很长很长。&lt;/p&gt;
+
+&lt;p&gt;很多人（包括我）都会经常觉得 XYZ 新事物跟老东西比太新、太不成熟、体验太不好、想要解决的问题太多、解决方案太 overkill、然后就没有然后了，但其实说不定你在看的这个就是 next big thing 呢。这些梦想家们 vision 里的 big picture 太大了，有的人可能在半个 picture 出来的时候就可以看出来了，有的人则可能要等到整个 picture 都快填满了才看得出来。&lt;/p&gt;
+
+&lt;p&gt;如果不是因为 Ads/Messenger 的坑深 React/Reason/Flux 也就不会在这里诞生了，&lt;/p&gt;
+
+&lt;p&gt;如果不是因为 Facebook 的坑深 GraphQL/Infer/Hack/Flow/Buck 也就不会在这里诞生了。&lt;/p&gt;
+
+&lt;p&gt;正是有一群开垦者不怕坑深才使得各种 idea 成为了大家手上好用的 tool 啊。&lt;/p&gt;
+
+&lt;p&gt;梦想家程序员们的工作价值于实干主义的程序员，总是很容易在过程中被低估、忽视，或是得不到尊重。而又在流行之后被神化，仿佛是那个人早已洞察一切一样。其实梦想家的工作，也是一点点累加，一点点迭代起来的。他们也需要伯乐和追随者的支持和帮助。&lt;/p&gt;
+
+&lt;p&gt;Chenglou 这个人总是在巨兴奋与巨沮丧之间切换，这段时间下来，我开始能感受这种情绪的来源了。&lt;/p&gt;
+
+&lt;p&gt;他总是用一句话来总结他回答我的吐槽、抱怨、疑问、惊叹，我就用这句话来结尾好了：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;“Welcome to the producer side!”&lt;/strong&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 30 Jun 2018 00:00:00 +0200</pubDate>
+        <link>http://localhost:4000/2018/06/30/dreamer/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/06/30/dreamer/</guid>
+        
+        <category>Facebook</category>
+        
+        <category>生活</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
