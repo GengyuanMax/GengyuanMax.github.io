@@ -1,5 +1,5 @@
 # Site settings
-title: 耕源 | gengyuanmax
+title: gengyuanmax
 SEOTitle: gengyuanmax
 header-img: img/home-bg.jpeg
 email: gengyuanmax@gmail.com
@@ -13,12 +13,12 @@ future: true
 
 # SNS settings
 RSS: false
-#weibo_username:    
+weibo_username:    fiauque
 #zhihu_username:     false
 github_username:   GengyuanMax 
 #twitter_username:   false
 #facebook_username:  huxpro
-#linkedin_username:  firstname-lastname-idxxxx
+linkedin_username:  gengyuan-zhang-343542184
 instagram_username: gengyuanmax
 
 
@@ -30,7 +30,7 @@ paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 # If you have timezone issue (e.g. #68) in China, uncomment to use this:
-#timezone: CN  
+timezone: DE
 
 
 
@@ -72,7 +72,7 @@ netease_comment: false
 
 # Google Analytics
 ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-ga_domain: gengyuanmax.io
+ga_domain: gengyuanmax.github.io
 
 
 
