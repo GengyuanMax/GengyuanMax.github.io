@@ -11,16 +11,16 @@
     <meta name="theme-color" content="#000000">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="gengyuanmax">
+    <meta property="og:title" content="Categories - gengyuanmax">
     
     <meta property="og:type" content="website">
-    <meta property="og:description" content="What you read becomes what you are <br> 你所经历的 都是塑造你的">
+    <meta property="og:description" content="cd $(which cat?)">
     
     <meta property="og:image" content="http://localhost:4000/img/avatar-gy-ny.jpeg">
-    <meta property="og:url" content="http://localhost:4000/">
+    <meta property="og:url" content="http://localhost:4000/categories/">
     <meta property="og:site_name" content="gengyuanmax">
     
-    <title>gengyuanmax</title>
+    <title>Categories - gengyuanmax</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -29,7 +29,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/">
+    <link rel="canonical" href="http://localhost:4000/categories/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -169,7 +169,11 @@
 </script>
 
 
-    <!-- Page Header -->
+    <!-- 
+Credits: this page shamelessly borrowed a lot from:
+https://github.com/kitian616/jekyll-TeXt-theme
+-->
+<!-- Page Header -->
 
 
 
@@ -177,15 +181,15 @@
 
 
 
-<header class="intro-header" style="background-image: url('/img/home-bg.jpeg')">
+<header class="intro-header" style="background-image: url('/img/cat-bg.jpeg')">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
-        <div class="site-heading">
+        <div class="site-heading" id="tag-heading">
         
-          <h1>gengyuanmax</h1>
-          <span class="subheading">What you read becomes what you are <br> 你所经历的 都是塑造你的</span>
+          <h1>Categories</h1>
+          <span class="subheading">cd $(which cat?)</span>
         </div>
       </div>
     </div>
@@ -193,218 +197,165 @@
 </header>
 
 
-<!-- Main Content -->
+<!-- Main Content
+3 -->
+<hr>
+<!-- 	<div style="background: #F7F6F6;"> -->
 <div class="container">
 	<div class="row">
-        
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<div id='tag_cloud' class="tags tags-sup js-tags">
+<!-- 				<a class="tag-button--all" data-encode="">
+					Show All
+					<sup>4</sup>
+				</a> -->
 
-<!-- USE SIDEBAR -->
-    <!-- PostList Container -->
-    		<div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                postlist-container
-            ">
-    			
-<div class="post-preview">
-    <a href="/jekyll/update/2019/04/15/welcome-to-jekyll/">
-        <h2 class="post-title">
-            Welcome to Jekyll!
-        </h2>
-        
-        <div class="post-content-preview">
-            
-                You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run je...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by gengyuanmax on April 15, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/test/2018/10/06/vim-cn-im/">
-        <h2 class="post-title">
-            Vim 与中文输入法
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Using Vim with non-english input method
-        </h3>
-        
-        <div class="post-content-preview">
-            
-                Update: 我最后还是放弃在 Vim 模式下输入中文了，mental model 的 cost 太重了（
-
-
-
-我相信很多中文世界的 Vimer 都遇到过这个烦恼，在 vim 的 insert 模式时可能突然想输个中文，输完之后会本能的直接 esc 接 normal 模式操作，结果发现跳出来的是中文输入法……对于 vscode，我一般会在几次错误之后被逼到退出 vscode vim...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Hux on October 6, 2018
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2018/09/27/avoiding-success-at-all-cost/">
-        <h2 class="post-title">
-            Avoiding success at all cost
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Watching "Escape from the Ivory Tower: The Haskell Journey"
-        </h3>
-        
-        <div class="post-content-preview">
-            
-                “Avoiding success at all cost” is the informal motto behinds Haskell. It could be parenthesized in two ways, either “Avoiding (success at all cost)” or “(Avoiding sucess) (at all cost)”.
-
-I’m not going to interpret them directly but rather to share some thoughts on “the success vs. costs” basing ...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Hux on September 27, 2018
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/test/2018/06/30/dreamer/">
-        <h2 class="post-title">
-            程序员中的梦想家
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Dreamers among programmers
-        </h3>
-        
-        <div class="post-content-preview">
-            
-                
-  本文首发于我的知乎专栏 The Little Programmer，转载请保留链接 ;)
-
-
-有一类程序员是 visionary 型的，为了实现一些超前的 idea，绕过某些技术的限制，他们写的 code 晦涩高深得只有他们自己能懂，做出来的 tool 看上去很美好结果处处是坑出了 bug 根本没法查，但正是这类人不断创造出新的东西，在洗礼之后成为一个个 big thing。
-
-我每周...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Hux on June 30, 2018
-    </p>
-</div>
-<hr>
-
-
-<!-- Pager -->
-
-
-    		</div>
-    <!-- Sidebar Container -->
-            <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-                <!-- Featured Tags -->
-                
-
-
-<section>
-    
-    <h5><a href="/archive/">FEATURED TAGS</a></h5>
-    <div class="tags">
-        
-        
-        
-        
-        
-    </div>
-</section>
-
-
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-  <hr>
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-    
-    <img src="/img/avatar-gy-ny.jpeg" />
-    
-    
-    <p>wish less & work more<br></p>
-    
-    <!-- SNS Link -->
-    
-
-
-<ul class="list-inline">
-
-
-  
-  
-  
-  
-  <li>
-    <a target="_blank" href="http://weibo.com/fiauque">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  
-  
-  
-  <li>
-    <a target="_blank" href="https://github.com/GengyuanMax">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  
-  
-  <li>
-    <a target="_blank" href="https://www.linkedin.com/in/gengyuan-zhang-343542184">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  
-</ul>
-  </div>
-</section>
-
-                <!-- Friends Blog -->
-                
-<hr>
-<h5>FRIENDS</h5>
-<ul class="list-inline">
-  
-  <li><a href=""></a></li>
-  
-</ul>
-
-    		</div>
-        
+				
+						<a href="#test" 
+							data-encode="test"
+							class="tag-button--all"
+							title="view all posts in &lt;test&gt;">
+						test
+						
+						<sup>2</sup>
+						</a>
+				
+						<a href="#jekyll" 
+							data-encode="jekyll"
+							class="tag-button--all"
+							title="view all posts in &lt;jekyll&gt;">
+						jekyll
+						
+						<sup>1</sup>
+						</a>
+				
+						<a href="#update" 
+							data-encode="update"
+							class="tag-button--all"
+							title="view all posts in &lt;update&gt;">
+						update
+						
+						<sup>1</sup>
+						</a>
+				
+				
+				</p>
+			</div>
+		</div>
 	</div>
 </div>
+<!-- 	
+		<p style="font-size:24px;margin-left:5%;">
+			<i class="fa fa-folder"></i>
+				<a href="#test" title="view all posts in &lt;test&gt;">
+					test
+				</a>
+			<i class="fa fa-angle-left"></i>
+		2
+		<i class="fa fa-angle-right"></i></p></ul>
+	
+		<p style="font-size:24px;margin-left:5%;">
+			<i class="fa fa-folder"></i>
+				<a href="#jekyll" title="view all posts in &lt;jekyll&gt;">
+					jekyll
+				</a>
+			<i class="fa fa-angle-left"></i>
+		1
+		<i class="fa fa-angle-right"></i></p></ul>
+	
+		<p style="font-size:24px;margin-left:5%;">
+			<i class="fa fa-folder"></i>
+				<a href="#update" title="view all posts in &lt;update&gt;">
+					update
+				</a>
+			<i class="fa fa-angle-left"></i>
+		1
+		<i class="fa fa-angle-right"></i></p></ul>
+	 -->
+<!-- 	</div> -->
+<!-- <h2 style="text-align:center;"> -->
+<!-- <i class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"></i>
+<i class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"></i>
+<i class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"></i> -->
+<!-- <i class="fa fa-bolt"></i> -->
+<!-- <strong>
+Details
+</strong></h2> -->
 
+
+<p style="font-weight: normal;font-size:20px;margin-left:20%;color:">
+
+	<a href="#test" name="test" title="view all posts in &lt;test&gt;">
+		<i class="fa fa-terminal"></i>
+		test
+	</a>
+<!-- 	<i class="fa fa-bars"></i>
+		2 -->
+	</p>
+	<ul>
+		
+		<ol>
+			<p style="font-size:13px;margin-left:13%;margin-bottom:auto;line-height:5px">
+			2018-10-06
+			<i class="fa fa-greater-than"></i>
+			<a href="/test/2018/10/06/vim-cn-im/">
+			Vim 与中文输入法
+		</a></p></ol>
+	
+		<ol>
+			<p style="font-size:13px;margin-left:13%;margin-bottom:auto;line-height:5px">
+			2018-06-30
+			<i class="fa fa-greater-than"></i>
+			<a href="/test/2018/06/30/dreamer/">
+			程序员中的梦想家
+		</a></p></ol>
+	
+	</ul> 
+	<span class="fa listing-seperator"></span>
+
+<p style="font-weight: normal;font-size:20px;margin-left:20%;color:">
+
+	<a href="#jekyll" name="jekyll" title="view all posts in &lt;jekyll&gt;">
+		<i class="fa fa-terminal"></i>
+		jekyll
+	</a>
+<!-- 	<i class="fa fa-bars"></i>
+		1 -->
+	</p>
+	<ul>
+		
+		<ol>
+			<p style="font-size:13px;margin-left:13%;margin-bottom:auto;line-height:5px">
+			2019-04-15
+			<i class="fa fa-greater-than"></i>
+			<a href="/jekyll/update/2019/04/15/welcome-to-jekyll/">
+			Welcome to Jekyll!
+		</a></p></ol>
+	
+	</ul> 
+	<span class="fa listing-seperator"></span>
+
+<p style="font-weight: normal;font-size:20px;margin-left:20%;color:">
+
+	<a href="#update" name="update" title="view all posts in &lt;update&gt;">
+		<i class="fa fa-terminal"></i>
+		update
+	</a>
+<!-- 	<i class="fa fa-bars"></i>
+		1 -->
+	</p>
+	<ul>
+		
+		<ol>
+			<p style="font-size:13px;margin-left:13%;margin-bottom:auto;line-height:5px">
+			2019-04-15
+			<i class="fa fa-greater-than"></i>
+			<a href="/jekyll/update/2019/04/15/welcome-to-jekyll/">
+			Welcome to Jekyll!
+		</a></p></ol>
+	
+	</ul> 
+	<span class="fa listing-seperator"></span>
 
 
     <!-- Footer -->

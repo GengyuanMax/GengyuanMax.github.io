@@ -11,31 +11,27 @@
     <meta name="theme-color" content="#000000">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="程序员中的梦想家 - gengyuanmax">
+    <meta property="og:title" content="Vim 与中文输入法 - gengyuanmax">
     
     <meta property="og:type" content="article">
-    <meta property="og:description" content="
-  本文首发于我的知乎专栏 The Little Programmer，转载请保留链接 ;)
-
+    <meta property="og:description" content="Update: 我最后还是放弃在 Vim 模式下输入中文了，mental model 的 cost 太重了（
 
 ">
     
-    <meta property="article:published_time" content="2018-06-30T00:00:00Z">
+    <meta property="article:published_time" content="2018-10-06T00:00:00Z">
     
     
     <meta property="article:author" content="Hux">
     
     
-    <meta property="article:tag" content="Facebook">
-    
-    <meta property="article:tag" content="生活">
+    <meta property="article:tag" content="Vim">
     
     
     <meta property="og:image" content="http://localhost:4000/img/avatar-gy-ny.jpeg">
-    <meta property="og:url" content="http://localhost:4000/2018/06/30/dreamer/">
+    <meta property="og:url" content="http://localhost:4000/test/2018/10/06/vim-cn-im/">
     <meta property="og:site_name" content="gengyuanmax">
     
-    <title>程序员中的梦想家 - gengyuanmax</title>
+    <title>Vim 与中文输入法 - gengyuanmax</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -44,7 +40,7 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/2018/06/30/dreamer/">
+    <link rel="canonical" href="http://localhost:4000/test/2018/10/06/vim-cn-im/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -75,7 +71,7 @@
 
     <!-- Navigation -->
 
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
 
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -108,6 +104,12 @@
                     
                     <li>
                         <a href="/archive/">Archive</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/categories/">Categories</a>
                     </li>
                     
                     
@@ -180,7 +182,7 @@
 
     <!-- Image to hack wechat -->
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="/img/post-bg-dreamer.jpg" width="0" height="0"> -->
+<!-- <img src="/img/home-bg.jpeg" width="0" height="0"> -->
 
 <!-- Post Header -->
 
@@ -189,21 +191,14 @@
 <style type="text/css">
     header.intro-header{
         position: relative;
-        background-image: url('/img/post-bg-dreamer.jpg');
+        background-image: url('/img/home-bg.jpeg');
         background: ;
     }
 
     
-    header.intro-header .header-mask{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background: rgba(0,0,0, 0.4);
-    }
-    
 </style>
 
-<header class="intro-header" >
+<header class="intro-header style-text" >
 
     <div class="header-mask"></div>
     
@@ -213,15 +208,13 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/archive/?tag=Facebook" title="Facebook">Facebook</a>
-                        
-                        <a class="tag" href="/archive/?tag=%E7%94%9F%E6%B4%BB" title="生活">生活</a>
+                        <a class="tag" href="/archive/?tag=Vim" title="Vim">Vim</a>
                         
                     </div>
-                    <h1>程序员中的梦想家</h1>
+                    <h1>Vim 与中文输入法</h1>
                     
-                    <h2 class="subheading">Dreamers among programmers</h2>
-                    <span class="meta">Posted by Hux on June 30, 2018</span>
+                    <h2 class="subheading">Using Vim with non-english input method</h2>
+                    <span class="meta">Posted by Hux on October 6, 2018</span>
                 </div>
             </div>
         </div>
@@ -247,41 +240,40 @@
                 <!-- Multi-Lingual -->
                 
 
-				<blockquote>
-  <p>本文首发于我的知乎专栏 <a href="https://zhuanlan.zhihu.com/p/38722466">The Little Programmer</a>，转载请保留链接 ;)</p>
-</blockquote>
+				<p>Update: 我最后还是放弃在 Vim 模式下输入中文了，mental model 的 cost 太重了（</p>
 
-<p>有一类程序员是 visionary 型的，为了实现一些超前的 idea，绕过某些技术的限制，他们写的 code 晦涩高深得只有他们自己能懂，做出来的 tool 看上去很美好结果处处是坑出了 bug 根本没法查，但正是这类人不断创造出新的东西，在洗礼之后成为一个个 big thing。</p>
+<hr />
 
-<p>我每周都要被 infra 的坑 block 得无法工作几次搞得非常沮丧，后来我发现这个锅除了要扔给 FB 外，还有一大半要扔给我周围这群 visionary 的同事们，我工作直接需要接触到的区区五六个人，发起/创造了 Infer, React, Reason, ReasonReact, BuckleScript…</p>
+<p>我相信很多中文世界的 Vimer 都遇到过这个烦恼，在 vim 的 insert 模式时可能突然想输个中文，输完之后会本能的直接 <code class="highlighter-rouge">esc</code> 接 normal 模式操作，结果发现跳出来的是中文输入法……对于 vscode，我一般会在几次错误之后被逼到退出 vscode vim 模式，而对于终端中用的 neovim，就只能尽量不输入中文了。</p>
 
-<p>所以这大概就是见证/参与这些 idea 成长的代价吧，也意识到这些东西不是在刚开始就像后来大家接受流行时那么美好的。React 发布 5 周年生日时回放 Jordan/Tom 2013 年第一次对外发布 React/JSX 的视频。我问 Jordan 说你后来怎么没再去分享了。他说你不知道我那天讲完下来被所有听众指着批评。React 第一次在内部使用是 2011 年在 news feed，然后是 2012 年 instagram (pete hunt)，所以这个时间其实很长很长。</p>
+<p>为了满足我 1% 用 vim 输入中文的场景（比如写博客），我还是想看看有没有什么解决方案，Google 出来的解决方案基本是：<em>在退出 insert 模式时记住当时的输入法，并自动切换到默认输入法（一般是英文）给 normal 模式用，并且在下一次进入 insert 模式时再切换回来。</em></p>
 
-<p>很多人（包括我）都会经常觉得 XYZ 新事物跟老东西比太新、太不成熟、体验太不好、想要解决的问题太多、解决方案太 overkill、然后就没有然后了，但其实说不定你在看的这个就是 next big thing 呢。这些梦想家们 vision 里的 big picture 太大了，有的人可能在半个 picture 出来的时候就可以看出来了，有的人则可能要等到整个 picture 都快填满了才看得出来。</p>
+<p>原生 vim 的话，可以使用 <a href="https://github.com/ybian/smartim">smartim</a> 插件，原理是调用 <a href="https://github.com/daipeihust/im-select">im-select</a> 这个 CLI 工具来切换输入法。</p>
 
-<p>如果不是因为 Ads/Messenger 的坑深 React/Reason/Flux 也就不会在这里诞生了，</p>
+<p>对于 VSCode-vim 的话，smartim 的移植也在近期的 PR 中被 merge 到了插件里，<a href="https://github.com/VSCodeVim/Vim#use-im-select">详情见文档的这部分配置</a>，需要指定一下默认输入法和 im-select 的 binary 路径就好。</p>
 
-<p>如果不是因为 Facebook 的坑深 GraphQL/Infer/Hack/Flow/Buck 也就不会在这里诞生了。</p>
+<hr />
+<p>
+不过实话说，在 vim 中编辑中文的效率和体验和英文比都是大打折扣的。因为中文分词难度太高，不像英文可以简单依靠一个 <code class="highlighter-rouge">split " "</code> 搞定。所以其实无论 vim（<code class="highlighter-rouge">w</code>ord，<code class="highlighter-rouge">b</code>egin，<code class="highlighter-rouge">e</code>nd），emacs 还是操作系统自带的（比如 macOS 中的 <code class="highlighter-rouge">alt + 箭头</code>） 「按词移动」功能对于中文都仅仅是跳转到下一个空格处而已，对于中文来说基本就是下一句了……其他常用操作诸如 <code class="highlighter-rouge">f</code>，<code class="highlighter-rouge">/</code>, <code class="highlighter-rouge">r</code>eplace, <code class="highlighter-rouge">t</code>ill 也都无法很好的工作。</p>
 
-<p>正是有一群开垦者不怕坑深才使得各种 idea 成为了大家手上好用的 tool 啊。</p>
-
-<p>梦想家程序员们的工作价值于实干主义的程序员，总是很容易在过程中被低估、忽视，或是得不到尊重。而又在流行之后被神化，仿佛是那个人早已洞察一切一样。其实梦想家的工作，也是一点点累加，一点点迭代起来的。他们也需要伯乐和追随者的支持和帮助。</p>
-
-<p>Chenglou 这个人总是在巨兴奋与巨沮丧之间切换，这段时间下来，我开始能感受这种情绪的来源了。</p>
-
-<p>他总是用一句话来总结他回答我的吐槽、抱怨、疑问、惊叹，我就用这句话来结尾好了：</p>
-
-<p><strong>“Welcome to the producer side!”</strong></p>
+<p>不过也算聊胜于无吧，由于我常用 HHKB，能用 vim 操作的一个子集（<code class="highlighter-rouge">hjkl</code>, <code class="highlighter-rouge">o</code>, <code class="highlighter-rouge">A</code>, <code class="highlighter-rouge">I</code>, <code class="highlighter-rouge">v</code> etc.）可能也比按住 <code class="highlighter-rouge">Fn</code> 的方向键好用……</p>
 
 
                 <hr style="visibility: hidden;">
                 <ul class="pager">
                     
+                    <li class="previous">
+                        <a href="/2018/09/27/avoiding-success-at-all-cost/" data-toggle="tooltip" data-placement="top" title="Avoiding success at all cost">
+                        Previous<br>
+                        <span>Avoiding success at all cost</span>
+                        </a>
+                    </li>
+                    
                     
                     <li class="next">
-                        <a href="/2018/09/27/avoiding-success-at-all-cost/" data-toggle="tooltip" data-placement="top" title="Avoiding success at all cost">
+                        <a href="/jekyll/update/2019/04/15/welcome-to-jekyll/" data-toggle="tooltip" data-placement="top" title="Welcome to Jekyll!">
                         Next<br>
-                        <span>Avoiding success at all cost</span>
+                        <span>Welcome to Jekyll!</span>
                         </a>
                     </li>
                     
@@ -353,8 +345,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "hux";
-    var disqus_identifier = "/2018/06/30/dreamer";
-    var disqus_url = "http://localhost:4000/2018/06/30/dreamer/";
+    var disqus_identifier = "/test/2018/10/06/vim-cn-im";
+    var disqus_url = "http://localhost:4000/test/2018/10/06/vim-cn-im/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

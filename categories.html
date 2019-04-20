@@ -1,0 +1,86 @@
+---
+title: Categories
+layout: default
+description: cd $(which cat?)
+header-img: "img/cat-bg.jpeg"
+---
+
+<!-- 
+Credits: this page shamelessly borrowed a lot from:
+https://github.com/kitian616/jekyll-TeXt-theme
+-->
+<!-- Page Header -->
+{% include intro-header.html type='page' short=true %}
+
+<!-- Main Content
+{{ site.categories | size }} -->
+<hr>
+<!-- 	<div style="background: #F7F6F6;"> -->
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<div id='tag_cloud' class="tags tags-sup js-tags">
+<!-- 				<a class="tag-button--all" data-encode="">
+					Show All
+					<sup>{{site.posts.size}}</sup>
+				</a> -->
+
+				{% for category in site.categories %}
+						<a href="#{{ category | first }}" 
+							data-encode="{{category | first }}"
+							class="tag-button--all"
+							title="view all posts in &lt;{{ category | first }}&gt;">
+						{{ category | first }}
+						
+						<sup>{{ category | last | size }}</sup>
+						</a>
+				{% endfor %}
+				{{ tags | split:'</a>' | sort | join:'</a>' }}
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 	{% for category in site.categories %}
+		<p style="font-size:24px;margin-left:5%;">
+			<i class="fa fa-folder"></i>
+				<a href="#{{ category | first }}" title="view all posts in &lt;{{ category | first }}&gt;">
+					{{ category | first }}
+				</a>
+			<i class="fa fa-angle-left"></i>
+		{{ category | last | size }}
+		<i class="fa fa-angle-right"></i></p></ul>
+	{% endfor %} -->
+<!-- 	</div> -->
+<!-- <h2 style="text-align:center;"> -->
+<!-- <i class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"></i>
+<i class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"></i>
+<i class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"></i> -->
+<!-- <i class="fa fa-bolt"></i> -->
+<!-- <strong>
+Details
+</strong></h2> -->
+
+{% for category in site.categories %}
+<p style="font-weight: normal;font-size:20px;margin-left:20%;color:">
+
+	<a href="#{{ category | first }}" name="{{ category | first }}" title="view all posts in &lt;{{ category | first }}&gt;">
+		<i class="fa fa-terminal"></i>
+		{{ category | first }}
+	</a>
+<!-- 	<i class="fa fa-bars"></i>
+		{{ category | last | size }} -->
+	</p>
+	<ul>
+		{% for post in category.last %}
+		<ol>
+			<p style="font-size:13px;margin-left:13%;margin-bottom:auto;line-height:5px">
+			{{ post.date | date:"%Y-%m-%d"}}
+			<i class="fa fa-greater-than"></i>
+			<a href="{{ post.url }}">
+			{{ post.title }}
+		</a></p></ol>
+	{% endfor %}
+	</ul> 
+	<span class="fa listing-seperator"></span>
+{% endfor %}
